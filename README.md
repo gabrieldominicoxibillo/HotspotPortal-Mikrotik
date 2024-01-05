@@ -20,4 +20,4 @@ Contributions and improvements are welcome! If you have ideas for enhancements, 
 
 *I hope this customized MikroTik Hotspot Portal enhances the user experience on your network. Happy coding!*
 
-*Feel free to donate in my [Ko-fi](https://ko-fi.com/domxii) or GCash number 09071945418. For donations outside the Philippines you can send in my [Paypal](paypal.me/Domoxi). Your support is greatly appreciated. Thank you!*
+*Feel free to donate in my [Ko-fi](https://ko-fi.com/domxii) or GCash number 09071945418. For donations outside the Philippines you can send in my [Paypal](paypal.com/paypalme/Domoxi). Your support is greatly appreciated. Thank you!*
