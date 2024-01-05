@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title id="title"></title>
+$(if refresh-timeout)
+<!--meta http-equiv="refresh" content="$(refresh-timeout-secs)"-->
+$(endif)
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="theme-color" content="#1FA2FF" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<script language="JavaScript">
+
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+
+</script>
+</head>
+<body $(if advert-pending == 'yes')	onLoad="openAdvert()" $(endif) >
+<div class="main">
+  $(if login-by == 'trial')
+	<div style="margin-top:20px; text-align: center; color:#fff;"><h3>Welcome!</h3><i style="font-size:50px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3>Trial User</h3></div><br>
+
+    $(elif login-by != 'mac')
+
+<div style="margin-top: 20px; text-align: center; color: #fff;">
+    <p style="margin: 0;">Welcome!</p>
+    <h3 style="margin: 0;">CONNECTED</h3>
+    <i style="font-size: 50px; color: #5F9DE7; margin: 20px;" class="icon icon-user-circle-o">&#xf2be;</i>
+    <div class="copyusername">
+      <h3 id="user" style="display: inline;">$(username)</h3>
+      <button id="copyButton" class="copybutton" >
+        <img src="copy.webp" alt="Copy Icon" style="width: 20px;">
+      </button>
+    </div>
+    <p style="margin-top: 10px;">Save your voucher code</p>
+  </div>
+    <br>
+$(endif)
+<div class="container">
+<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+
+    <div>
+        <i class="icon icon-clock" style="color: #7e97b8;margin: 0%;">&#xe805;</i>
+        <p style="display: inline-block; margin-top: 18px; margin-bottom: 0;">Remaining Time:</p>
+      </div>
+
+    <div id="time-left" style="text-align: center;margin-top: 18px; margin: 0; font-size: 30px;font-weight: bold; color: #5F9DE7;">
+        <span id="timeleft"></span>
+    </div>
+
+    $(if login-by-mac != 'yes')
+    <br>
+    <!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+    <button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+    end of user manager link -->
+    <button class="button2" type="submit">
+        <img src="pause.webp" alt="Pause Icon" style="width: 50px;">
+      </button>
+      <p style="margin-bottom: 25px;">Pause Connection</p>
+    $(endif)
+
+<table class="table2">
+	<tr><td align="left" style="width: 40%;">$(ip) <i class="icon icon-sitemap">&#xf0e8;</i> </td><td>$(mac)<i class="icon icon-barcode">&#xe80a;</i> </td></tr>
+     <!--<tr><td align="left">MAC Address </td><td></td></tr>
+    <tr><td align="left">Upload <i class="icon icon-upload">&#xe808;</i> </td><td>$(bytes-in-nice)</td></tr>
+    <tr><td align="left">Download <i class="icon icon-download">&#xe809;</i> </td><td>$(bytes-out-nice)</td></tr>
+	<tr><td align="left">Connected <i class="icon icon-exchange">&#xf0ec;</i> </td><td>$(uptime)</td></tr>
+$(if remain-bytes-total)
+    <tr><td align="left">Bytes Left <i class="icon icon-hourglass-2">&#xf252;</i> </td><td>$(remain-bytes-total-nice)</td></tr>-->
+$(endif)
+$(if session-time-left)
+    
+$(endif)
+$(if blocked == 'yes')
+	<tr><td align="right">Status <i class="icon icon-check">&#xe807;</i> </td><td><div style="color: #FF8080">
+<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td></tr>
+$(elif refresh-timeout)
+	<tr><td align="right">Refresh <i <i class="icon icon-arrows-cw">&#xe800;</i> </td><td>$(refresh-timeout)</td></tr>
+
+<!---   $(endif)--> 
+<!---     <tr><td align="right">Expired <i <i class="icon icon-calendar">&#xe806;</i> </td><td style="padding-top:0px; padding-left:2px;"><iframe id="exp" frameborder="0" scrolling="no" src="about:blank"></iframe></td></tr> --> 
+
+</table>
+
+</form>
+</div>
+</div>
+<script type="text/javascript">
+    document.getElementById('title').innerHTML = window.location.hostname + " > status";
+//get vaidity
+    var usr = document.getElementById('user').innerHTML
+    var url = "http://192.168.1.8/status/status.php?name="; // http://ip-server-mikhmon/mikhmonv2/status/status.php?name=
+    var SessionName = "Haplite"
+    var getvalid = url+usr+"&session="+SessionName
+    document.getElementById('exp').src = getvalid;
+        
+</script>
+
+
+<script>
+    var ltime = '$(session-time-left-secs)';
+    var utime = '$(uptime-secs)';
+    var countDownDate = new Date(Date.now()+ ltime*1000).getTime();
+    var countUptime = new Date(utime*1000 - Date.now()).getTime();
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var ldistance = countDownDate - now;
+        var udistance = countUptime + now;
+        var ldays = Math.floor(ldistance / (1000 * 60 * 60 * 24));
+        var lhours = Math.floor((ldistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var lminutes = Math.floor((ldistance % (1000 * 60 * 60)) / (1000 * 60));
+        var lseconds = Math.floor((ldistance % (1000 * 60)) / 1000);
+        var udays = Math.floor(udistance / (1000 * 60 * 60 * 24));
+        var uhours = Math.floor((udistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var uminutes = Math.floor((udistance % (1000 * 60 * 60)) / (1000 * 60));
+        var useconds = Math.floor((udistance % (1000 * 60)) / 1000);
+            
+        var ltime_string = ldays ? ldays + "d ": "";
+        ltime_string += lhours ?  lhours + "h ": "";
+        ltime_string += lminutes ?  lminutes + "m ": "";
+        ltime_string += lseconds ?  lseconds + "s ": "";
+        var utime_string = udays ? udays + "d ": "";
+        utime_string += uhours ?  uhours + "h ": "";
+        utime_string += uminutes ?  uminutes + "m ": "";
+        utime_string += useconds ?  useconds + "s ": "";
+        document.getElementById("timeleft").innerHTML = ltime_string;
+        document.getElementById("newuptime").innerHTML = utime_string;
+        
+        if (ldistance < 0) {
+        clearInterval(x);
+        document.getElementById("timeleft").innerHTML = "Expired!";
+        }
+    }, 1000);
+</script>
+
+<script>
+    // Get the text to copy from the h3 element
+    var userText = document.getElementById("user").textContent;
+  
+    // Get a reference to the copy button
+    var copyButton = document.getElementById("copyButton");
+  
+    // Add a click event listener to the button
+    copyButton.addEventListener("click", function() {
+      // Create a new text area element
+      var textArea = document.createElement("textarea");
+      textArea.value = userText;
+  
+      // Append the text area element to the document
+      document.body.appendChild(textArea);
+  
+      // Select the text within the text area
+      textArea.select();
+      textArea.setSelectionRange(0, textArea.value.length);
+  
+      // Copy the selected text to the clipboard
+      document.execCommand("copy");
+  
+      // Remove the text area element from the document
+      document.body.removeChild(textArea);
+  
+      // Provide feedback to the user
+      copyButton.innerHTML = '<img src="copied.webp" alt="Copy Icon" style="width: 20px;"> ';
+    });
+  </script>
+
+</body>
+</html>

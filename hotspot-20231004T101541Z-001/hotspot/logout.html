@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title id="title"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="theme-color" content="#1FA2FF" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<script language="JavaScript">
+
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+
+</script>
+
+<div class="main">
+<div class="box">
+    <i style="font-size: 50px; color: #7e97b8; margin-bottom: 20px;" class="icon icon-user-circle-o">&#xf2be;</i>  <div class="copyusername">
+        <h3 id="user" style="display: inline;">$(username)</h3>
+        <button id="copyButton" class="copybutton" >
+          <img src="copy.webp" alt="Copy Icon" style="width: 20px;">
+        </button>
+      </div>
+      <p style="margin-top: 10px;">Save your voucher code for reconnection</p></div><br>
+    <b style="margin-top:20px; color:#ff6f6f;">YOU ARE DISCONNECTED FROM THE WI-FI!</b> 
+</div>
+<br>
+<div class="container">
+    <br>
+<table class="table2">
+    <tr><td align="right">IP Address  <i class="icon icon-sitemap">&#xf0e8;</i> </td><td>$(ip)</td></tr>
+    <tr><td align="right">MAC Address <i class="icon icon-barcode">&#xe80a;</i>  </td><td>$(mac)</td></tr>
+    <tr><td align="right">Connected <i class="icon icon-exchange">&#xf0ec;</i> </td><td>$(uptime)</td></tr>
+    <tr><td align="right">Upload <i class="icon icon-upload">&#xe808;</i> </td><td>$(bytes-in-nice)</td></tr>
+    <tr><td align="right">Download <i class="icon icon-download">&#xe809;</i> </td><td>$(bytes-out-nice)</td></tr>
+$(if remain-bytes-total)
+    <tr><td align="right">Bytes Left <i class="icon icon-hourglass-2">&#xf252;</i> </td><td>$(remain-bytes-total-nice)</td></tr>
+$(endif)
+$(if session-time-left)
+    <tr><td align="right">Time Left <i class="icon icon-clock">&#xe805;</i> </td><td>$(session-time-left)</td></tr>
+$(endif)
+</table>
+<br>
+<form action="$(link-login)" name="login" onSubmit="return openLogin()">
+        <button class="button" type="submit"><i class="icon icon-login">&#xe803;</i> Exit</button>
+</form>
+</div>
+</div>
+<script type="text/javascript">
+	document.getElementById('title').innerHTML = window.location.hostname + " > logout";
+</script>
+
+<script>
+    // Get the text to copy from the h3 element
+    var userText = document.getElementById("user").textContent;
+  
+    // Get a reference to the copy button
+    var copyButton = document.getElementById("copyButton");
+  
+    // Add a click event listener to the button
+    copyButton.addEventListener("click", function() {
+      // Create a new text area element
+      var textArea = document.createElement("textarea");
+      textArea.value = userText;
+  
+      // Append the text area element to the document
+      document.body.appendChild(textArea);
+  
+      // Select the text within the text area
+      textArea.select();
+      textArea.setSelectionRange(0, textArea.value.length);
+  
+      // Copy the selected text to the clipboard
+      document.execCommand("copy");
+  
+      // Remove the text area element from the document
+      document.body.removeChild(textArea);
+  
+      // Provide feedback to the user
+      copyButton.innerHTML = '<img src="copied.webp" alt="Copy Icon" style="width: 20px;"> ';
+    });
+  </script>
+
+
+</body>
+</html>
