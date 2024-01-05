@@ -5,3 +5,12 @@ Welcome to the MikroTik Hotspot Portal repository! This project is designed to e
 1. **Customized Design:** The portal includes HTML, CSS, and JavaScript files that have been carefully crafted to provide an attractive and user-friendly interface.
 
 2. **Easy Integration:** The files are designed for seamless integration with MikroTik Hotspot systems. Simply replace the default files with the customized ones to personalize your Hotspot portal.
+
+## How to Use:
+1. **Download:** Clone or download the repository to your computer where Winbox is installed.
+
+2. **Customize:** Modify the HTML, CSS, and JavaScript files according to your branding and design preferences. > Skip to Step 3 if no further modifications are desired.
+
+3. **Upload to MikroTik:** Replace the default files on your MikroTik Hotspot server with your customized files.
+   
+4. **Enjoy:** Users connecting to your MikroTik Hotspot will now experience the enhanced portal with your custom design and have access to stored files.
