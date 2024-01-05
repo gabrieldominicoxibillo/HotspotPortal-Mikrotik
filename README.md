@@ -2,10 +2,9 @@
   <img src="hotspot-20231004T101541Z-001/hotspot/img/logo.webp" alt="Logo" width="200"/>
 </p>
 
-<h1 align="center"> Customized MikroTik Hotspot Portal Design </h1>
+<h1 align="center">Customized MikroTik Hotspot Portal Design</h1>
 
-<p Welcome to the MikroTik Hotspot Portal repository! This project is designed to enhance the user experience of MikroTik Hotspot users by providing a customized and visually appealing portal for authentication. 
-</p>
+<p align="center">Welcome to the MikroTik Hotspot Portal repository! This project is designed to enhance the user experience of MikroTik Hotspot users by providing a customized and visually appealing portal for authentication.</p>
 
 <hr>
 
