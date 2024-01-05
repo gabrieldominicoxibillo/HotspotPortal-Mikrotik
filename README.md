@@ -1,4 +1,6 @@
-![Logo](hotspot-20231004T101541Z-001/hotspot/img/logo.webp)
+<p align="center">
+  <img src="hotspot-20231004T101541Z-001/hotspot/img/logo.webp" alt="Logo" width="200"/>
+</p>
 # Customized MikroTik Hotspot Portal Design
 Welcome to the MikroTik Hotspot Portal repository! This project is designed to enhance the user experience of MikroTik Hotspot users by providing a customized and visually appealing portal for authentication. 
 
