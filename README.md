@@ -11,7 +11,7 @@ Welcome to the MikroTik Hotspot Portal repository! This project is designed to e
 
 2. **Customize:** Modify the HTML, CSS, and JavaScript files according to your branding and design preferences. *Skip to Step 3 if no further modifications are desired.*
 
-3. **Upload to MikroTik:** Replace the default files on your MikroTik Hotspot server with your customized files.
+3. **Upload to MikroTik:** Replace the default files on your MikroTik Hotspot server with the downloaded files.
    
 4. **Enjoy:** Users connecting to your MikroTik Hotspot will now experience the enhanced portal with your custom design and have access to stored files.
 
