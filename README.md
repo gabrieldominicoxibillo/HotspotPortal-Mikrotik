@@ -30,7 +30,7 @@ Here are some sample images from the portal:
 
 3. **Upload to MikroTik:** Replace the default files on your MikroTik Hotspot server with the downloaded files.
    
-4. **Enjoy:** Users connecting to your MikroTik Hotspot will now experience the enhanced portal with your custom design and have access to stored files.
+4. **Enjoy:** Users connecting to your MikroTik Hotspot will now experience the enhanced portal with the custom design.
 
 ## Contribution:
 Contributions and improvements are welcome! If you have ideas for enhancements, bug fixes, or additional features, feel free to fork the repository and submit pull requests.
