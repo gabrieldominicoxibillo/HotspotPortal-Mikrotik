@@ -13,6 +13,16 @@
 
 2. **Easy Integration:** The files are designed for seamless integration with MikroTik Hotspot systems. Simply replace the default files with the customized ones to personalize your Hotspot portal.
 
+
+## Sample Images
+
+Here are some sample images from the portal:
+
+<p style="display: flex;">
+        <img src="image1.jpg" alt="Image 1" style="max-width: 50%; height: auto;">
+        <img src="image2.jpg" alt="Image 2" style="max-width: 50%; height: auto;">
+</p>
+
 ## How to Use:
 1. **Download:** Clone or download the repository to your computer where [Winbox](https://mikrotik.com/download) is installed.
 
