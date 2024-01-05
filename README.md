@@ -19,9 +19,9 @@
 Here are some sample images from the portal:
 
 <p style="display: flex;">
-        <img src="image1.jpg" alt="Image 1" style="max-width: 33.33%; height: auto;">
-        <img src="image2.jpg" alt="Image 2" style="max-width: 33.33%; height: auto;">
-        <img src="image3.jpg" alt="Image 2" style="max-width: 33.33%; height: auto;">
+        <img src="image1.jpg" alt="Image 1" style="width="200; height: auto;">
+        <img src="image2.jpg" alt="Image 2" style="width="200; height: auto;">
+        <img src="image3.jpg" alt="Image 2" style="width="200; height: auto;">
 </p>
 
 ## How to Use:
