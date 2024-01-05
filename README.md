@@ -1,5 +1,5 @@
 # Customized MikroTik Hotspot Portal Design
-Welcome to the MikroTik Hotspot Portal repository! This project is designed to enhance the user experience of MikroTik Hotspot users by providing a customized and visually appealing portal for authentication.
+Welcome to the MikroTik Hotspot Portal repository! This project is designed to enhance the user experience of MikroTik Hotspot users by providing a customized and visually appealing portal for authentication. 
 
 ## Features:
 1. **Customized Design:** The portal includes HTML, CSS, and JavaScript files that have been carefully crafted to provide an attractive and user-friendly interface.
@@ -19,3 +19,5 @@ Welcome to the MikroTik Hotspot Portal repository! This project is designed to e
 Contributions and improvements are welcome! If you have ideas for enhancements, bug fixes, or additional features, feel free to fork the repository and submit pull requests.
 
 *I hope this customized MikroTik Hotspot Portal enhances the user experience on your network. Happy coding!*
+
+*Feel free to donate in my [Ko-fi](https://ko-fi.com/domxii) or GCash number 09071945418. For donations outside the Philippines you can send in my [Paypal](paypal.me/Domoxi). Your support is greatly appreciated. Thank you!*
